@@ -15,7 +15,9 @@ module Machines
       end
 
       def sink(source)
-        throw RuntimeError.new 'DiscreteSink may only be assigned to a source once' unless @source.nil?
+        unless @source.nil?
+          throw RuntimeError.new('DiscreteSink may only be assigned to a source once')
+        end 
         @source = source
         if source.is_a? DiscreteBase
           source.on_change { notify_change }

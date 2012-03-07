@@ -72,7 +72,7 @@ module Machines
         #TODO Must support buffering of writes for bool and int values :only_change/:always
         #FIXME Bug since values must be read from the signals in main thread, FIXED, TEST!
         values_generator = Proc.new do |group| 
-          @bool_outputs.values_at(group).map {|v| v ? 1 : 0})
+          @bool_outputs.values_at(group).map {|v| v ? 1 : 0}
         end
         update_helper(@bool_outputs, filter, :consecutive_groups, values_generator) do |group, conn, values|
           conn.write_multiple_coils(group.first, values)
@@ -118,14 +118,14 @@ module Machines
         when :float
           entry.signal.v = values.values_at(address..(address+1)).pack('u*').unpack('g')
         when :string
-          throw RuntimeError.new 'No :length supplied for string value' unless entry.length
+          throw RuntimeError.new('No :length supplied for string value') unless entry.length
           entry.signal.v = values.values_at(address..(address + entry.length)).pack('u*')
         else
-          throw RuntimeError.new 'Unsupported format :%s' % entry.format.to_s
+          throw RuntimeError.new('Unsupported format :%s' % entry.format.to_s)
         end
       end
 
-      def update_helper(entries, filter, group_method, val_generator = nil) do
+      def update_helper(entries, filter, group_method, val_generator = nil) # do
         send(group_method, filter_scangroup(entries, filter)).each do |group|
           values = val_generator && val_generator.call(group)
           perform_in_background do |connection|
@@ -187,31 +187,31 @@ module Machines
 
       def bool_input(address, options)
         result = Machines::TimeDomain::DiscreteSignal.new
-        @bool_inputs[number_from_address address] = 
-          ModbusEntry.new result, :bool, options[:scangroup]
+        @bool_inputs[number_from_address(address)] = 
+          ModbusEntry.new(result, :bool, options[:scangroup])
         result
       end
 
       def word_input(address, options)
         result = Machines::TimeDomain::AnalogSignal.new 
-        @bool_inputs[number_from_address address] = 
-          ModbusEntry.new result, options[:format] || :int, options[:scangroup], options[:length]
+        @bool_inputs[number_from_address(address)] = 
+          ModbusEntry.new(result, options[:format] || :int, options[:scangroup], options[:length])
         result
       end
       
       def bool_output(source, address, options)
-        addr = number_from_address address]
+        addr = number_from_address(address)
         if @bool_outputs.key? addr 
-          throw RuntimeError.new 'Output on bool address %d is already in use' % addr 
+          throw RuntimeError.new('Output on bool address %d is already in use' % addr) 
         end
         @bool_outputs[addr] = ModbusEntry.new source, :bool, options[:scangroup]
         source
       end
 
       def word_output(source, address, options)
-        addr = number_from_address address]
+        addr = number_from_address(address)
         if @word.key? addr 
-          throw RuntimeError.new 'Output on word address %d is already in use' % addr 
+          throw RuntimeError.new('Output on word address %d is already in use' % addr)
         end
         @word_outputs[addr] = 
           ModbusEntry.new source, options[:format] || :int, options[:scangroup], options[:length]
@@ -229,7 +229,7 @@ module Machines
         when /%?m(\d+)/i
           :bool
         else
-          throw RuntimeError.new 'Invalid format for address, use :mw1 or :m1'
+          throw RuntimeError.new('Invalid format for address, use :mw1 or :m1')
         end
       end
 

@@ -3,21 +3,22 @@ include 'machines/timedomain/wait_step'
 include 'machines/timedomain/timer'
 include 'machines/timedomain/sequencer'
 
-mmodule Machines
+module Machines
   module Sequences
     class Sequence
       include StepBase
 
       attr_reader :name
 
-      def initialize(name = nil, @options = {})
+      def initialize(name = nil, options = {})
         @name = name
         @steps = []
         @reverse_dir = false
         @end_step = Step.new do |s|
           s.at_end { continue! }
         end
-  
+        
+        @options = options
         circular if @options[:circular]
         auto_start if @options[:auto_start]
 
@@ -44,7 +45,7 @@ mmodule Machines
       end
 
       def wait(time)
-        step WaitStep.new time
+        step WaitStep.new(time)
       end
 
       def circular(delay = 100)
@@ -75,6 +76,7 @@ mmodule Machines
         @steps.each {|s| s.reset! }
         @end_step.reset!
       end
+      
     end
   end
 end

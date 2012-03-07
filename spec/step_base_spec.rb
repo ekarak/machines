@@ -40,7 +40,7 @@ describe StepBase do
   end
 
   def expect_now(t)
-    now.should be_close t, 0.010
+      now.should be_within(0.010).of(t)
   end
 
   def run
@@ -157,8 +157,8 @@ describe StepBase do
 
   it 'should report the correct duration' do
     at(1.0){ @s.start }
-    at(1.1){ @s.duration.should be_close(0.1, 0.010) }
-    at(4.0){ @s.duration.should be_close(3.0, 0.010) }
+    at(1.1){ @s.duration.should be_within(0.010).of(0.1) }
+    at(4.0){ @s.duration.should be_within(0.010).of(3.0) }
     run
   end
 
@@ -171,7 +171,7 @@ describe StepBase do
 
   it 'should report correct startup time' do
     at(1.0){ @s.start }
-    at(2.0){ @s.start_time.to_f.should be_close(@t0.to_f + 1.0, 0.010) }
+    at(2.0){ @s.start_time.to_f.should be_within(0.010).of(@t0.to_f + 1.0) }
     run
   end
 

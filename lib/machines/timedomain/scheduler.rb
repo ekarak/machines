@@ -36,7 +36,7 @@ module Machines
 
 
       def wait_until(time, tag = nil, &block)
-        throw RuntimeError.new 'wait_until will only accept Time objects' unless time.is_a? Time
+        throw RuntimeError.new('wait_until will only accept Time objects') unless time.is_a? Time
         entry = Entry.new
         entry.time, entry.tag, entry.callback = time, tag, block
         @scheduled.synchronize do
@@ -121,7 +121,7 @@ module Machines
         end
 
         def wait
-          throw RuntimeError.new 'Waiting forever in skip wait policy'
+          throw RuntimeError.new('Waiting forever in skip wait policy')
         end
 
         def now

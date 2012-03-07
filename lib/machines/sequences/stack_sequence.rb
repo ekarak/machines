@@ -17,7 +17,7 @@ module Machines
       end
 
       def step(s)
-        if s.respond_to? :up_step && s.respond_to? :down_step
+        if s.respond_to?(:up_step) && s.respond_to?(:down_step)
           up_step s.up_step
           down_step s.down_step
         else 

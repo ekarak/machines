@@ -1,3 +1,4 @@
+=begin
 begin
   require 'spec'
 rescue LoadError
@@ -5,6 +6,7 @@ rescue LoadError
   gem 'rspec'
   require 'spec'
 end
-
+=end
+require 'rspec'
 $:.unshift(File.dirname(__FILE__) + '/../lib')
 require 'machines'

@@ -20,7 +20,7 @@ describe Timer do
     Timeout::timeout(2) do 
       @timer.on_finish do
         timer_finished = true
-        (Scheduler.current.now - @t0).should be_close(1.0, 0.010)
+        (Scheduler.current.now - @t0).should be_within(0.010).of(1.0)
       end
       Scheduler.current.run_for 1.5
     end
@@ -29,7 +29,7 @@ describe Timer do
 
   it 'should report the elapsed time' do
     Scheduler.current.wait 0.5 do
-      @timer.elapsed.should be_close(0.5, 0.010)
+        @timer.elapsed.should be_within(0.010).of(0.5)
     end
     @timer.start
     Scheduler.current.run_for 1.5
@@ -85,7 +85,9 @@ describe Timer do
       @timer.time = 2
     end
     @timer.start
-    @timer.on_finish { (Scheduler.current.now - @t0).should be_close(2.0, 0.010) }
+    @timer.on_finish { 
+        (Scheduler.current.now - @t0).should be_within(0.010).of(2.0) 
+    }
     Scheduler.current.run_for 3.0
   end
 

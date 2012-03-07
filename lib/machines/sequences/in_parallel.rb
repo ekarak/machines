@@ -1,8 +1,9 @@
-include 'ruby_plc/sequences/step_base'
+include 'sequences/step_base'
 
 module Machines
   module Sequences
     class InParallel
+      
       include StepBase
       attr_reader :name
 
@@ -15,10 +16,10 @@ module Machines
       end
 
       def step(s)
-        steps << to_step s
+        steps << to_step(s)
         @steps.last.on_exit { continue! }
           continue!
-        end
+        #end #FIXME: are defs below for module Sequences???
       end
 
       def active?
@@ -36,8 +37,8 @@ module Machines
       def perform_reset
         @steps.each {|s| s.reset! }
       end
+      
     end
   end
 end
-
 

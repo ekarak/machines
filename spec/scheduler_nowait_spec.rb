@@ -22,26 +22,26 @@ describe Scheduler do
   end
 
   it 'should not actually perform a wait that takes time' do
-    Benchmark.measure { Scheduler.current.run_for 1 }.real.should be_close(0.0, 0.010)
+      Benchmark.measure { Scheduler.current.run_for 1 }.real.should be_within(0.010).of(0.0)
   end
 
   it 'should callback after the correct amount of time using wait_until' do
     Scheduler.current.wait_until(@t0 + 10) do
-      (Scheduler.current.now - @t0).should be_close(10.0, 0.010)
+        (Scheduler.current.now - @t0).should be_within(0.010).of(10.0)
     end
     Scheduler.current.run_for 11
   end
 
   it 'should callback after the correct amount of time using wait' do
     Scheduler.current.wait(10) do
-      (Scheduler.current.now - @t0).should be_close(10.0, 0.010)
+        (Scheduler.current.now - @t0).should be_within(0.010).of(10.0)
     end
     Scheduler.current.run_for 11
   end
 
   it 'should execute run_now blocks immediately' do
     Scheduler.current.at_once do
-      (Scheduler.current.now - @t0).should be_close(0.0, 0.010)
+        (Scheduler.current.now - @t0).should be_within(0.010).of(0.0)
     end
     Scheduler.current.run_for 1
   end
@@ -63,7 +63,7 @@ describe Scheduler do
     end
     Scheduler.current.run_for 11
     dt = times.map {|t| t - @t0 }
-    dt.each_with_index {|t, i| t.should be_close(i + 1, 0.010) }
+    dt.each_with_index {|t, i| t.should be_within(0.010).of(i + 1) }
   end
 
   def perform_foo(arr, foo)
@@ -87,7 +87,7 @@ describe Scheduler do
 
   it 'should execute a task immediately when time is in the past' do
     Scheduler.current.wait_until(@t0 - 10) do
-      (Scheduler.current.now - @t0).should be_close(0.0, 0.010)
+        (Scheduler.current.now - @t0).should be_within(0.010).of(0.0)
     end
     Scheduler.current.run_for 1
   end

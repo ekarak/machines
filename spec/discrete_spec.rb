@@ -32,7 +32,7 @@ describe 'Discrete signals' do
   def check_time_offsets(times, desired_times)
     times.should have(desired_times.size).items
     times.zip(desired_times).each do |pair|
-      pair.first.to_f.should be_close(pair.last.to_f, 0.010)
+        pair.first.to_f.should be_within(0.01).of(pair.last.to_f)
     end
   end
 
@@ -129,7 +129,7 @@ describe 'Discrete signals' do
 
   it 'should support timed off with a block' do
     times = []
-    @double_pulse.tof(1).should be_a DiscreteBase
+    @double_pulse.tof(1).should be_a(DiscreteBase)
     @double_pulse.tof(1) { times << now }
     @double_pulse.tof(7) { fail }
     Scheduler.current.run_for 10
@@ -138,7 +138,7 @@ describe 'Discrete signals' do
 
   it 'should support timed on returning a signal' do
     times = []
-    @double_pulse.ton(1).should be_a DiscreteBase
+    @double_pulse.ton(1).should be_a(DiscreteBase)
     @double_pulse.ton(0.5).on_change { times << now }
     @double_pulse.ton(2).on_change { fail }
     Scheduler.current.run_for 20000
@@ -147,7 +147,7 @@ describe 'Discrete signals' do
 
   it 'should support timed off returning a signal' do
     times = []
-    @double_pulse.tof(1).should be_a DiscreteBase
+    @double_pulse.tof(1).should be_a(DiscreteBase)
     @double_pulse.tof(1).on_change { times << now }
     @double_pulse.tof(7).on_change { fail }
     Scheduler.current.run_for 10
@@ -189,7 +189,7 @@ describe 'Discrete signals' do
 
   it 'should generate the inverse discrete signal' do
     i = @double_pulse.invert
-    i.should be_a DiscreteBase
+    i.should be_a(DiscreteBase)
     (0..6).each do |t|
       Scheduler.current.wait(t + 0.5) { i.v.should == !@double_pulse.v }
     end

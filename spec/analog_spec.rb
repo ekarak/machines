@@ -84,7 +84,7 @@ describe 'Analog signals' do
     comb.should be_a Analog
     @a.v = 2.0
     @b.v = 4.0
-    comb.v.should be_close 1.0 ** 2 + 2.0 ** 2 + 4.0 ** 2, 0.0001
+    comb.v.should be_within(0.0001).of(1.0 ** 2 + 2.0 ** 2 + 4.0 ** 2)
   end
 
   it 'should support Analog.to_disc with a block to convert to discrete' do

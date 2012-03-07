@@ -23,7 +23,7 @@ module Machines
 
       private
 
-      def buffered_or_new(address) do
+      def buffered_or_new(address) #do
         result = io_buffer[address]
         unless result 
           result = yield
@@ -31,6 +31,7 @@ module Machines
         end
         result
       end
+      
     end
   end
 end

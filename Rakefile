@@ -1,6 +1,7 @@
 %w[rubygems rake rake/clean fileutils newgem rubigen].each { |f| require f }
 require File.dirname(__FILE__) + '/lib/machines'
 
+require 'hoe'
 # Generate all the Rake tasks
 # Run 'rake -T' to see list of generated tasks (from gem root directory)
 $hoe = Hoe.new('machines', Machines::VERSION) do |p|
@@ -22,7 +23,10 @@ $hoe = Hoe.new('machines', Machines::VERSION) do |p|
 end
 
 require 'newgem/tasks' # load /tasks/*.rake
-Dir['tasks/**/*.rake'].each { |t| load t }
+Dir['tasks/**/*.rake'].each { |t|
+    puts "\tloading #{t}"
+    load t 
+}
 
 desc "Look for TODO and FIXME tags in the code"
 task :todo do

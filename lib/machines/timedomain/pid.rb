@@ -64,5 +64,7 @@ module Machines
         @output ||= Analog.new result
         @output.v = result
       end
+      
     end
   end
+end
