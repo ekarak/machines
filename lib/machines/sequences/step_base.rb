@@ -3,6 +3,8 @@ require 'machines/timedomain/discrete'
 
 module Machines
   module Sequences
+    
+    # Base class for calculation steps
     class StepBase
       extend Notify
 
@@ -20,13 +22,14 @@ module Machines
         @active_signal ||= Discrete.new
       end
 
+      # FIXME: refactor
       alias :original_notify_enter :notify_enter
       def notify_enter
         original_notify_enter
         @active_signal.v = true if @active_signal
       end
 
-
+      # FIXME: refactor
       alias :original_notify_exit :notify_exit
       def notify_exit
         original_notify_exit
@@ -125,9 +128,11 @@ module Machines
       def may_start?
         finished?
       end
-
+      
+      #######
       private 
-
+      #######
+      
       def private_continue(step)
         if may_continue? 
           Scheduler.current.at_once do 

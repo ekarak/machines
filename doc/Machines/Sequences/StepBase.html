@@ -1,0 +1,1283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: Machines::Sequences::StepBase</title>
+
+	<link rel="stylesheet" href="../../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../../index.html">Home</a>
+          <a href="../../index.html#classes">Classes</a>
+          <a href="../../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../../lib/machines/sequences/step_base_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/machines/sequences/step_base.rb">lib/machines/sequences/step_base.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link"><a href="../../Object.html">Object</a></p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-i-active_signal">#active_signal</a></li>
+					
+					<li><a href="#method-i-condition_true%3F">#condition_true?</a></li>
+					
+					<li><a href="#method-i-continue">#continue</a></li>
+					
+					<li><a href="#method-i-continue_from">#continue_from</a></li>
+					
+					<li><a href="#method-i-continue_from_if">#continue_from_if</a></li>
+					
+					<li><a href="#method-i-continue_if">#continue_if</a></li>
+					
+					<li><a href="#method-i-continue_on_callback">#continue_on_callback</a></li>
+					
+					<li><a href="#method-i-continue_to">#continue_to</a></li>
+					
+					<li><a href="#method-i-duration">#duration</a></li>
+					
+					<li><a href="#method-i-finished%3F">#finished?</a></li>
+					
+					<li><a href="#method-i-may_continue%3F">#may_continue?</a></li>
+					
+					<li><a href="#method-i-may_start%3F">#may_start?</a></li>
+					
+					<li><a href="#method-i-notify_enter">#notify_enter</a></li>
+					
+					<li><a href="#method-i-notify_exit">#notify_exit</a></li>
+					
+					<li><a href="#method-i-on_exit_reset">#on_exit_reset</a></li>
+					
+					<li><a href="#method-i-original_notify_enter">#original_notify_enter</a></li>
+					
+					<li><a href="#method-i-original_notify_exit">#original_notify_exit</a></li>
+					
+					<li><a href="#method-i-otherwise_from">#otherwise_from</a></li>
+					
+					<li><a href="#method-i-otherwise_to">#otherwise_to</a></li>
+					
+					<li><a href="#method-i-perform_finish">#perform_finish</a></li>
+					
+					<li><a href="#method-i-perform_start">#perform_start</a></li>
+					
+					<li><a href="#method-i-private_continue">#private_continue</a></li>
+					
+					<li><a href="#method-i-reset">#reset</a></li>
+					
+					<li><a href="#method-i-start">#start</a></li>
+					
+					<li><a href="#method-i-to_step">#to_step</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../../History_txt.html">History.txt</a></li>
+				
+					<li class="file"><a href="../../Manifest_txt.html">Manifest.txt</a></li>
+				
+					<li class="file"><a href="../../PostInstall_txt.html">PostInstall.txt</a></li>
+				
+					<li class="file"><a href="../../README_rdoc.html">README.rdoc</a></li>
+				
+					<li class="file"><a href="../../README_rdoc~.html">README.rdoc~</a></li>
+				
+					<li class="file"><a href="../../Rakefile.html">Rakefile</a></li>
+				
+					<li class="file"><a href="../../Rakefile~.html">Rakefile~</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../../Machines.html">Machines</a></li>
+				
+					<li><a href="../../Machines/IO.html">Machines::IO</a></li>
+				
+					<li><a href="../../Machines/IO/IOAccess.html">Machines::IO::IOAccess</a></li>
+				
+					<li><a href="../../Machines/IO/ModbusSlave.html">Machines::IO::ModbusSlave</a></li>
+				
+					<li><a href="../../Machines/Physical.html">Machines::Physical</a></li>
+				
+					<li><a href="../../Machines/Physical/AnalogConstant.html">Machines::Physical::AnalogConstant</a></li>
+				
+					<li><a href="../../Machines/Physical/Interlock.html">Machines::Physical::Interlock</a></li>
+				
+					<li><a href="../../Machines/Physical/Motor.html">Machines::Physical::Motor</a></li>
+				
+					<li><a href="../../Machines/Physical/PID.html">Machines::Physical::PID</a></li>
+				
+					<li><a href="../../Machines/Physical/Valve.html">Machines::Physical::Valve</a></li>
+				
+					<li><a href="../../Machines/Sequences.html">Machines::Sequences</a></li>
+				
+					<li><a href="../../Machines/Sequences/ChooseOne.html">Machines::Sequences::ChooseOne</a></li>
+				
+					<li><a href="../../Machines/Sequences/InParallel.html">Machines::Sequences::InParallel</a></li>
+				
+					<li><a href="../../Machines/Sequences/Sequence.html">Machines::Sequences::Sequence</a></li>
+				
+					<li><a href="../../Machines/Sequences/StackSequence.html">Machines::Sequences::StackSequence</a></li>
+				
+					<li><a href="../../Machines/Sequences/Step.html">Machines::Sequences::Step</a></li>
+				
+					<li><a href="../../Machines/Sequences/StepBase.html">Machines::Sequences::StepBase</a></li>
+				
+					<li><a href="../../Machines/Sequences/WaitStep.html">Machines::Sequences::WaitStep</a></li>
+				
+					<li><a href="../../Machines/Timedomain.html">Machines::Timedomain</a></li>
+				
+					<li><a href="../../Machines/Timedomain/Analog.html">Machines::Timedomain::Analog</a></li>
+				
+					<li><a href="../../Machines/Timedomain/BinaryOpDiscrete.html">Machines::Timedomain::BinaryOpDiscrete</a></li>
+				
+					<li><a href="../../Machines/Timedomain/Discrete.html">Machines::Timedomain::Discrete</a></li>
+				
+					<li><a href="../../Machines/Timedomain/DiscreteBase.html">Machines::Timedomain::DiscreteBase</a></li>
+				
+					<li><a href="../../Machines/Timedomain/DiscreteSink.html">Machines::Timedomain::DiscreteSink</a></li>
+				
+					<li><a href="../../Machines/Timedomain/NegatedDiscrete.html">Machines::Timedomain::NegatedDiscrete</a></li>
+				
+					<li><a href="../../Machines/Timedomain/Sampler.html">Machines::Timedomain::Sampler</a></li>
+				
+					<li><a href="../../Machines/Timedomain/Scheduler.html">Machines::Timedomain::Scheduler</a></li>
+				
+					<li><a href="../../Machines/Timedomain/Scheduler/Entry.html">Machines::Timedomain::Scheduler::Entry</a></li>
+				
+					<li><a href="../../Machines/Timedomain/Scheduler/RealWaitPolicy.html">Machines::Timedomain::Scheduler::RealWaitPolicy</a></li>
+				
+					<li><a href="../../Machines/Timedomain/Scheduler/SkipWaitPolicy.html">Machines::Timedomain::Scheduler::SkipWaitPolicy</a></li>
+				
+					<li><a href="../../Machines/Timedomain/Timer.html">Machines::Timedomain::Timer</a></li>
+				
+					<li><a href="../../BeLogicalFalse.html">BeLogicalFalse</a></li>
+				
+					<li><a href="../../Notify.html">Notify</a></li>
+				
+					<li><a href="../../NotifyTestEmpty.html">NotifyTestEmpty</a></li>
+				
+					<li><a href="../../NotifyTestOne.html">NotifyTestOne</a></li>
+				
+					<li><a href="../../NotifyTestOneTwo.html">NotifyTestOneTwo</a></li>
+				
+					<li><a href="../../NotifyTestOneWithHandler.html">NotifyTestOneWithHandler</a></li>
+				
+					<li><a href="../../NotifyTestTwo.html">NotifyTestTwo</a></li>
+				
+					<li><a href="../../Object.html">Object</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">Machines::Sequences::StepBase</h1>
+
+		<div id="description">
+			<p>
+Base class for calculation steps
+</p>
+
+		</div>
+
+		<!-- Constants -->
+		
+
+		<!-- Attributes -->
+		
+		<div id="attribute-method-details" class="method-section section">
+			<h3 class="section-header">Attributes</h3>
+
+			
+			<div id="default-next-step-attribute-method" class="method-detail">
+				<a name="default_next_step"></a>
+				
+				<a name="default_next_step="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">default_next_step</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+			<div id="otherwise-step-attribute-method" class="method-detail">
+				<a name="otherwise_step"></a>
+				
+				<a name="otherwise_step="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">otherwise_step</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+			<div id="start-time-attribute-method" class="method-detail">
+				<a name="start_time"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">start_time</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+			<div id="prev-duration-attribute-method" class="method-detail">
+				<a name="prev_duration"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">prev_duration</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+		</div>
+		
+
+		<!-- Methods -->
+		
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="active-signal-method" class="method-detail ">
+				<a name="method-i-active_signal"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">active_signal</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Active signal - dont add listeners unless necessary
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="active-signal-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/machines/sequences/step_base.rb, line 21</span>
+21:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">active_signal</span>
+22:         <span class="ruby-ivar">@active_signal</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Discrete</span>.<span class="ruby-identifier">new</span>
+23:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="continue-method" class="method-detail ">
+				<a name="method-i-continue"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">continue</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="continue-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/machines/sequences/step_base.rb, line 67</span>
+67:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">continue</span>
+68:         <span class="ruby-identifier">private_continue</span> <span class="ruby-identifier">otherwise_step</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">default_next_step</span>
+69:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="continue-from-method" class="method-detail ">
+				<a name="method-i-continue_from"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">continue_from</span><span
+						class="method-args">(step)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="continue-from-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/machines/sequences/step_base.rb, line 87</span>
+87:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">continue_from</span>(<span class="ruby-identifier">step</span>)
+88:         <span class="ruby-identifier">step</span>.<span class="ruby-identifier">continue_to</span> <span class="ruby-keyword kw">self</span>
+89:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="continue-from-if-method" class="method-detail ">
+				<a name="method-i-continue_from_if"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">continue_from_if</span><span
+						class="method-args">(condition, step)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="continue-from-if-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/machines/sequences/step_base.rb, line 95</span>
+95:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">continue_from_if</span>(<span class="ruby-identifier">condition</span>, <span class="ruby-identifier">step</span>)
+96:         <span class="ruby-identifier">step</span>.<span class="ruby-identifier">continue_if</span> <span class="ruby-identifier">condition</span>, <span class="ruby-keyword kw">self</span>
+97:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="continue-if-method" class="method-detail ">
+				<a name="method-i-continue_if"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">continue_if</span><span
+						class="method-args">(condition, step = nil)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="continue-if-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/machines/sequences/step_base.rb, line 71</span>
+71:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">continue_if</span>(<span class="ruby-identifier">condition</span>, <span class="ruby-identifier">step</span> = <span class="ruby-keyword kw">nil</span>)
+72:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">condition</span>.<span class="ruby-identifier">respond_to?</span> <span class="ruby-value">:on_re</span>
+73:           <span class="ruby-identifier">condition</span>.<span class="ruby-identifier">on_re</span> { <span class="ruby-identifier">private_continue</span> <span class="ruby-identifier">step</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">default_next_step</span> } 
+74:         <span class="ruby-keyword kw">end</span>
+75:         <span class="ruby-ivar">@exit_conditions</span> <span class="ruby-operator">||=</span> []
+76:         <span class="ruby-ivar">@exit_conditions</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-identifier">condition</span>, <span class="ruby-identifier">step</span>]
+77:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="continue-on-callback-method" class="method-detail ">
+				<a name="method-i-continue_on_callback"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">continue_on_callback</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="continue-on-callback-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/machines/sequences/step_base.rb, line 99</span>
+ 99:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">continue_on_callback</span>
+100:         <span class="ruby-ivar">@continue_on_callback</span> = <span class="ruby-keyword kw">true</span>
+101:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="continue-to-method" class="method-detail ">
+				<a name="method-i-continue_to"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">continue_to</span><span
+						class="method-args">(step)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="continue-to-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/machines/sequences/step_base.rb, line 79</span>
+79:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">continue_to</span>(<span class="ruby-identifier">step</span>)
+80:         <span class="ruby-identifier">continue_if</span> <span class="ruby-keyword kw">true</span>, <span class="ruby-identifier">step</span>
+81:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="duration-method" class="method-detail ">
+				<a name="method-i-duration"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">duration</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="duration-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/machines/sequences/step_base.rb, line 103</span>
+103:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">duration</span>
+104:         <span class="ruby-ivar">@start_time</span> <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-constant">Scheduler</span>.<span class="ruby-identifier">current</span>.<span class="ruby-identifier">now</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@start_time</span>)
+105:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="finished--method" class="method-detail ">
+				<a name="method-i-finished%3F"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">finished?</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="finished--source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/machines/sequences/step_base.rb, line 39</span>
+39:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">finished?</span>
+40:         <span class="ruby-keyword kw">not</span> <span class="ruby-identifier">active?</span> <span class="ruby-comment cmt"># active? method should be present in including class</span>
+41:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="may-continue--method" class="method-detail ">
+				<a name="method-i-may_continue%3F"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">may_continue?</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Framework method
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="may-continue--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/machines/sequences/step_base.rb, line 118</span>
+118:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">may_continue?</span>
+119:         <span class="ruby-keyword kw">true</span>
+120:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="may-start--method" class="method-detail ">
+				<a name="method-i-may_start%3F"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">may_start?</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Framework method
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="may-start--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/machines/sequences/step_base.rb, line 128</span>
+128:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">may_start?</span>
+129:         <span class="ruby-identifier">finished?</span>
+130:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="notify-enter-method" class="method-detail ">
+				<a name="method-i-notify_enter"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">notify_enter</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="notify-enter-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/machines/sequences/step_base.rb, line 27</span>
+27:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">notify_enter</span>
+28:         <span class="ruby-identifier">original_notify_enter</span>
+29:         <span class="ruby-ivar">@active_signal</span>.<span class="ruby-identifier">v</span> = <span class="ruby-keyword kw">true</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@active_signal</span>
+30:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+				<div class="aliases">
+					Also aliased as: <a href="StepBase.html#method-i-original_notify_enter">original_notify_enter</a>
+				</div>
+				
+
+				
+			</div>
+
+		
+			<div id="notify-exit-method" class="method-detail ">
+				<a name="method-i-notify_exit"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">notify_exit</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="notify-exit-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/machines/sequences/step_base.rb, line 34</span>
+34:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">notify_exit</span>
+35:         <span class="ruby-identifier">original_notify_exit</span>
+36:         <span class="ruby-ivar">@active_signal</span>.<span class="ruby-identifier">v</span> = <span class="ruby-keyword kw">false</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@active_signal</span>
+37:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+				<div class="aliases">
+					Also aliased as: <a href="StepBase.html#method-i-original_notify_exit">original_notify_exit</a>
+				</div>
+				
+
+				
+			</div>
+
+		
+			<div id="on-exit-reset-method" class="method-detail ">
+				<a name="method-i-on_exit_reset"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">on_exit_reset</span><span
+						class="method-args">(&proc)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="on-exit-reset-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/machines/sequences/step_base.rb, line 15</span>
+15:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">on_exit_reset</span>(&amp;<span class="ruby-identifier">proc</span>)
+16:         <span class="ruby-identifier">on_exit</span> { <span class="ruby-keyword kw">yield</span> }
+17:         <span class="ruby-identifier">on_reset</span> { <span class="ruby-keyword kw">yield</span> }
+18:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="original-notify-enter-method" class="method-detail method-alias">
+				<a name="method-i-original_notify_enter"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">original_notify_enter</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+FIXME: refactor
+</p>
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="StepBase.html#method-i-notify_enter">notify_enter</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="original-notify-exit-method" class="method-detail method-alias">
+				<a name="method-i-original_notify_exit"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">original_notify_exit</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+FIXME: refactor
+</p>
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="StepBase.html#method-i-notify_exit">notify_exit</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="otherwise-from-method" class="method-detail ">
+				<a name="method-i-otherwise_from"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">otherwise_from</span><span
+						class="method-args">(step)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="otherwise-from-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/machines/sequences/step_base.rb, line 91</span>
+91:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">otherwise_from</span>(<span class="ruby-identifier">step</span>)
+92:         <span class="ruby-identifier">step</span>.<span class="ruby-identifier">otherwise_to</span> <span class="ruby-keyword kw">self</span>
+93:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="otherwise-to-method" class="method-detail ">
+				<a name="method-i-otherwise_to"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">otherwise_to</span><span
+						class="method-args">(step)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="otherwise-to-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/machines/sequences/step_base.rb, line 83</span>
+83:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">otherwise_to</span>(<span class="ruby-identifier">step</span>)
+84:         <span class="ruby-ivar">@otherwise_step</span> = <span class="ruby-identifier">step</span>
+85:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="perform-finish-method" class="method-detail ">
+				<a name="method-i-perform_finish"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">perform_finish</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Framework method
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="perform-finish-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/machines/sequences/step_base.rb, line 123</span>
+123:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">perform_finish</span>
+124:         <span class="ruby-ivar">@active</span> = <span class="ruby-keyword kw">false</span>
+125:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="perform-start-method" class="method-detail ">
+				<a name="method-i-perform_start"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">perform_start</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Framework method
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="perform-start-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/machines/sequences/step_base.rb, line 113</span>
+113:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">perform_start</span>
+114:         <span class="ruby-ivar">@active</span> = <span class="ruby-keyword kw">true</span>
+115:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="reset-method" class="method-detail ">
+				<a name="method-i-reset"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">reset</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="reset-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/machines/sequences/step_base.rb, line 107</span>
+107:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">reset</span>
+108:         <span class="ruby-identifier">perform_reset</span> <span class="ruby-comment cmt"># defined in class </span>
+109:         <span class="ruby-identifier">notify_reset</span>
+110:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="start-method" class="method-detail ">
+				<a name="method-i-start"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">start</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="start-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/machines/sequences/step_base.rb, line 43</span>
+43:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">start</span>
+44:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">may_start?</span> <span class="ruby-comment cmt"># may_start? defined in subclass</span>
+45:           <span class="ruby-ivar">@start_time</span> = <span class="ruby-constant">Scheduler</span>.<span class="ruby-identifier">current</span>.<span class="ruby-identifier">now</span>
+46:           <span class="ruby-ivar">@active_signal</span>.<span class="ruby-identifier">v</span> = <span class="ruby-keyword kw">true</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@active_signal</span>
+47:           <span class="ruby-identifier">perform_start</span>  <span class="ruby-comment cmt"># startup must be defined in including class</span>
+48:           <span class="ruby-identifier">notify_enter</span>
+49: 
+50:           <span class="ruby-comment cmt"># check if going directly to exit</span>
+51:           <span class="ruby-identifier">step</span> = <span class="ruby-keyword kw">nil</span>
+52:           <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@exit_conditions</span>
+53:             <span class="ruby-identifier">tb</span> = <span class="ruby-ivar">@exit_conditions</span>.<span class="ruby-identifier">find</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">condition_true?</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">first</span> }
+54:             <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">tb</span>
+55:               <span class="ruby-identifier">step</span> = <span class="ruby-identifier">tb</span>.<span class="ruby-identifier">last</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">default_next_step</span>
+56:             <span class="ruby-keyword kw">else</span>
+57:               <span class="ruby-identifier">step</span> = <span class="ruby-identifier">otherwise_step</span>
+58:             <span class="ruby-keyword kw">end</span>
+59:           <span class="ruby-keyword kw">else</span>
+60:             <span class="ruby-identifier">step</span> = <span class="ruby-operator">!</span><span class="ruby-ivar">@continue_on_callback</span> <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">otherwise_step</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">default_next_step</span>)
+61:           <span class="ruby-keyword kw">end</span>
+62: 
+63:           <span class="ruby-identifier">private_continue</span> <span class="ruby-identifier">step</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">step</span>
+64:         <span class="ruby-keyword kw">end</span>
+65:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="private-instance-method-details" class="method-section section">
+			<h3 class="section-header">Private Instance Methods</h3>
+
+		
+			<div id="condition-true--method" class="method-detail ">
+				<a name="method-i-condition_true%3F"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">condition_true?</span><span
+						class="method-args">(cond)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="condition-true--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/machines/sequences/step_base.rb, line 148</span>
+148:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">condition_true?</span>(<span class="ruby-identifier">cond</span>)
+149:         <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">cond</span>
+150:         <span class="ruby-keyword kw">when</span> <span class="ruby-constant">Proc</span>
+151:           <span class="ruby-identifier">cond</span>.<span class="ruby-identifier">call</span>
+152:         <span class="ruby-keyword kw">when</span> <span class="ruby-constant">DiscreteBase</span>
+153:           <span class="ruby-identifier">cond</span>.<span class="ruby-identifier">v</span>
+154:         <span class="ruby-keyword kw">else</span>
+155:           <span class="ruby-identifier">cond</span>
+156:         <span class="ruby-keyword kw">end</span>
+157:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="private-continue-method" class="method-detail ">
+				<a name="method-i-private_continue"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">private_continue</span><span
+						class="method-args">(step)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="private-continue-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/machines/sequences/step_base.rb, line 136</span>
+136:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">private_continue</span>(<span class="ruby-identifier">step</span>)
+137:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">may_continue?</span> 
+138:           <span class="ruby-constant">Scheduler</span>.<span class="ruby-identifier">current</span>.<span class="ruby-identifier">at_once</span> <span class="ruby-keyword kw">do</span> 
+139:             <span class="ruby-ivar">@prev_duration</span> = <span class="ruby-identifier">duration</span>
+140:             <span class="ruby-identifier">notify_exit</span>
+141:             <span class="ruby-identifier">perform_finish</span>
+142:             <span class="ruby-identifier">step</span>.<span class="ruby-identifier">start</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">step</span>
+143:             <span class="ruby-ivar">@active_signal</span>.<span class="ruby-identifier">v</span> = <span class="ruby-keyword kw">false</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@active_signal</span>
+144:           <span class="ruby-keyword kw">end</span>
+145:         <span class="ruby-keyword kw">end</span>
+146:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="to-step-method" class="method-detail ">
+				<a name="method-i-to_step"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">to_step</span><span
+						class="method-args">(s)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="to-step-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/machines/sequences/step_base.rb, line 159</span>
+159:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_step</span>(<span class="ruby-identifier">s</span>)
+160:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">respond_to?</span> <span class="ruby-value">:to_step</span>
+161:           <span class="ruby-identifier">s</span>.<span class="ruby-identifier">to_step</span>
+162:         <span class="ruby-keyword kw">else</span>
+163:           <span class="ruby-identifier">s</span>
+164:         <span class="ruby-keyword kw">end</span>
+165:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

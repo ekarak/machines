@@ -48,7 +48,7 @@ describe Scheduler do
 
   it 'should not callback if cancelled' do
     Scheduler.current.wait(10, :tag) do
-      lambda { throw RuntimeException.new 'Should be cancelled' }.should_not raise_error
+      lambda { throw RuntimeException.new('Should be cancelled') }.should_not raise_error
     end
     Scheduler.current.cancel :tag
     Scheduler.current.run_for 11

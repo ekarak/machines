@@ -164,7 +164,7 @@ describe 'Discrete signals' do
     check_time_offsets(times, [1, 2, 4, 5]);
   end
 
-  it 'should should allow sink from another constant value' do
+  it 'should allow sink from another constant value' do
     sink = DiscreteSink.new
     sink.sink(false)
     sink.v.should be_false

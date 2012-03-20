@@ -1,6 +1,7 @@
 = machines
 
-* http://github.com/tallakt/machines
+* http://github.com/ekarak/machines
+* fork of http://github.com/tallakt/machines
 
 == DESCRIPTION:
 
@@ -52,7 +53,8 @@ performed if this turns out to be a viable concept.
 
 (The MIT License)
 
-Copyright (c) 2009 FIXME full name
+Copyright (c) 2012 Elias Karakoulakis <elias.karakoulakis@gmail.com>
+Copyright (c) 2009 Tallakt Tveide
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the

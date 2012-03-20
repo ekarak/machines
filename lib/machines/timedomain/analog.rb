@@ -2,19 +2,23 @@ require 'machines/timedomain/timer'
 require 'machines/etc/notify'
 require 'machines/timedomain/discrete'
 
-
 module Machines
   module Timedomain
+        
+    # Analog component
+    # FIXME: no notion of units yet
     class Analog
       extend Notify
       attr_accessor :name, :description
       notify :change
 
+      # initialize an analog component with an initial value
       def initialize(value = nil)
         @name, @description = nil
         @v = value
       end
 
+      # set new value, fire notification if changed, return value
       def v=(val)
         if @v != val
           @v = val
@@ -23,10 +27,12 @@ module Machines
         @v
       end
 
+      # return value
       def v
         @v
       end
 
+      # class method to combine multiple signals into a single Analog using the code block provided
       def Analog.combine(*signals, &block)
         calc_proc = signals_value_calc_proc(*signals, &block)
         result = Analog.new calc_proc.call
@@ -39,7 +45,8 @@ module Machines
         end
         result
       end
-
+      
+      # class method to combine multiple signals into a single Discrete using the code block provided
       def Analog.combine_to_discrete(*signals, &block)
         calc_proc = signals_value_calc_proc(*signals, &block)
         result = Discrete.new calc_proc.call
@@ -54,6 +61,7 @@ module Machines
         result
       end
 
+      # FIXME: totally useless in my opinion
       def Analog.to_analog(v)
         case v
         when Analog
@@ -65,6 +73,9 @@ module Machines
         end
       end
 
+      # map instance to discrete. Use the block provided upstream, or else 
+      # simply store the analog value into the discrete component 
+      # FIXME: should map to boolean 
       def to_disc
         Discrete.new.tap do |d|
           if block_given?
@@ -81,7 +92,7 @@ module Machines
         end
       end
 
-      # add operators returing a new Analog
+      # add operators returning a new Analog
       %w(+ - * \ ** % <=>).each do |op|
         Analog.module_eval <<-EOF
           def #{op}(other)
@@ -103,14 +114,17 @@ module Machines
          EOF
       end
 
+      #######
       private
-
+      #######
+      
       # create a proc that will cal the block with the given signals
       # as inputs. The inputs are used either as values or as the 
       # values of signals. Ie. if the signal supports the :v method
       # or variable, signal.v is used, otherwise, signal itself is 
       # used
       def Analog.signals_value_calc_proc(*signals, &block)
+        raise "a calculation block must be provided!" unless block
         value_signals = []
         signals.each_with_index do |sig, ii|
           sig_val = "signals[#{ii}]" 
@@ -123,12 +137,7 @@ module Machines
           Proc.new { block.call(#{value_signals.join ','}) }  
         EOF
       end
+      
     end
   end
 end
-
-
-
-
-
-

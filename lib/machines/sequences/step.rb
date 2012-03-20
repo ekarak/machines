@@ -2,6 +2,8 @@ require 'machines/sequences/step_base'
 
 module Machines
   module Sequences
+    
+    # a calculation step
     class Step < StepBase
       attr_reader :name
 

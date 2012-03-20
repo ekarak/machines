@@ -1,11 +1,9 @@
 require 'machines/timedomain/discrete_base'
 
 module Machines
-  module Timedomain 
-    class DiscreteBase #:nodoc:
-      # forward Declaration
-    end
+  module Timedomain
 
+    # maybe we do not need a separate class for negation!
     class NegatedDiscrete < DiscreteBase
       def initialize(a)
         @a = a
@@ -18,8 +16,10 @@ module Machines
 
       def v
         !@a.v
-      end
+      end 
     end
+    
+    
   end
 end
 

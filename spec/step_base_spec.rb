@@ -50,7 +50,7 @@ describe StepBase do
   it 'should have an active signal' do
     @s.continue_if @p2, @dummy
     act = @s.active_signal
-    act.should be_a DiscreteBase
+    act.should be_a(DiscreteBase)
     act.v.should be_false
     at(1.0) { @s.start }
     at(1.5) { act.v.should be_true }

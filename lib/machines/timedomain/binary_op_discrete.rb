@@ -2,10 +2,9 @@ require 'machines/timedomain/discrete_base'
 
 module Machines
   module Timedomain 
-    class DiscreteBase #:nodoc:
-      # forward Declaration
-    end
-
+    
+    # defines binary operation between two discrete components
+    # FIXME: why only two?
     class BinaryOpDiscrete < DiscreteBase
       def initialize(a, b, &op)
         a.on_change { update }
@@ -14,12 +13,14 @@ module Machines
         @v = v
       end
 
+      # call operand block to determine the output
       def v
         @op.call to_discrete(@a), to_discrete(@b)
       end
 
+      #######
       private
-
+      #######
 
       def update
         old = @v

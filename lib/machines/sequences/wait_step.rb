@@ -1,5 +1,7 @@
 module Machines
   module Sequences
+    
+    # a calculation set using a waiting timeout
     class WaitStep < Step
       attr_accessor :timeout
 
@@ -10,6 +12,7 @@ module Machines
         on_reset { t.reset }
       end
     end
+    
   end
 end
 

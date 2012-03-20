@@ -2,6 +2,8 @@ include 'machines/timedomain/analog'
 
 module Machines
   module Physical
+    
+    # an analog value that cannot change
     class AnalogConstant < Analog
       attr_reader :v
 
@@ -11,9 +13,10 @@ module Machines
       end
 
       def on_change
-        # no need
+        raise "AnalogConstant cannot change value!"
       end
     end
+    
   end
 end
 

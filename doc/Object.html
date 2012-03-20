@@ -1,0 +1,655 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: Object</title>
+
+	<link rel="stylesheet" href="./rdoc.css" type="text/css" media="screen" />
+
+	<script src="./js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="./index.html">Home</a>
+          <a href="./index.html#classes">Classes</a>
+          <a href="./index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="./lib/machines/timedomain/analog_attr_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/machines/timedomain/analog_attr.rb">lib/machines/timedomain/analog_attr.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link"><a href="Object.html">Object</a></p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-i-analog_attr">#analog_attr</a></li>
+					
+					<li><a href="#method-i-at">#at</a></li>
+					
+					<li><a href="#method-i-be_logical_false">#be_logical_false</a></li>
+					
+					<li><a href="#method-i-check_time_offsets">#check_time_offsets</a></li>
+					
+					<li><a href="#method-i-create_pulse_train">#create_pulse_train</a></li>
+					
+					<li><a href="#method-i-expect_now">#expect_now</a></li>
+					
+					<li><a href="#method-i-now">#now</a></li>
+					
+					<li><a href="#method-i-now">#now</a></li>
+					
+					<li><a href="#method-i-one_state_should_be_active">#one_state_should_be_active</a></li>
+					
+					<li><a href="#method-i-perform_foo">#perform_foo</a></li>
+					
+					<li><a href="#method-i-run">#run</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="./History_txt.html">History.txt</a></li>
+				
+					<li class="file"><a href="./Manifest_txt.html">Manifest.txt</a></li>
+				
+					<li class="file"><a href="./PostInstall_txt.html">PostInstall.txt</a></li>
+				
+					<li class="file"><a href="./README_rdoc.html">README.rdoc</a></li>
+				
+					<li class="file"><a href="./README_rdoc~.html">README.rdoc~</a></li>
+				
+					<li class="file"><a href="./Rakefile.html">Rakefile</a></li>
+				
+					<li class="file"><a href="./Rakefile~.html">Rakefile~</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="./images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="./Machines.html">Machines</a></li>
+				
+					<li><a href="./Machines/IO.html">Machines::IO</a></li>
+				
+					<li><a href="./Machines/IO/IOAccess.html">Machines::IO::IOAccess</a></li>
+				
+					<li><a href="./Machines/IO/ModbusSlave.html">Machines::IO::ModbusSlave</a></li>
+				
+					<li><a href="./Machines/Physical.html">Machines::Physical</a></li>
+				
+					<li><a href="./Machines/Physical/AnalogConstant.html">Machines::Physical::AnalogConstant</a></li>
+				
+					<li><a href="./Machines/Physical/Interlock.html">Machines::Physical::Interlock</a></li>
+				
+					<li><a href="./Machines/Physical/Motor.html">Machines::Physical::Motor</a></li>
+				
+					<li><a href="./Machines/Physical/PID.html">Machines::Physical::PID</a></li>
+				
+					<li><a href="./Machines/Physical/Valve.html">Machines::Physical::Valve</a></li>
+				
+					<li><a href="./Machines/Sequences.html">Machines::Sequences</a></li>
+				
+					<li><a href="./Machines/Sequences/ChooseOne.html">Machines::Sequences::ChooseOne</a></li>
+				
+					<li><a href="./Machines/Sequences/InParallel.html">Machines::Sequences::InParallel</a></li>
+				
+					<li><a href="./Machines/Sequences/Sequence.html">Machines::Sequences::Sequence</a></li>
+				
+					<li><a href="./Machines/Sequences/StackSequence.html">Machines::Sequences::StackSequence</a></li>
+				
+					<li><a href="./Machines/Sequences/Step.html">Machines::Sequences::Step</a></li>
+				
+					<li><a href="./Machines/Sequences/StepBase.html">Machines::Sequences::StepBase</a></li>
+				
+					<li><a href="./Machines/Sequences/WaitStep.html">Machines::Sequences::WaitStep</a></li>
+				
+					<li><a href="./Machines/Timedomain.html">Machines::Timedomain</a></li>
+				
+					<li><a href="./Machines/Timedomain/Analog.html">Machines::Timedomain::Analog</a></li>
+				
+					<li><a href="./Machines/Timedomain/BinaryOpDiscrete.html">Machines::Timedomain::BinaryOpDiscrete</a></li>
+				
+					<li><a href="./Machines/Timedomain/Discrete.html">Machines::Timedomain::Discrete</a></li>
+				
+					<li><a href="./Machines/Timedomain/DiscreteBase.html">Machines::Timedomain::DiscreteBase</a></li>
+				
+					<li><a href="./Machines/Timedomain/DiscreteSink.html">Machines::Timedomain::DiscreteSink</a></li>
+				
+					<li><a href="./Machines/Timedomain/NegatedDiscrete.html">Machines::Timedomain::NegatedDiscrete</a></li>
+				
+					<li><a href="./Machines/Timedomain/Sampler.html">Machines::Timedomain::Sampler</a></li>
+				
+					<li><a href="./Machines/Timedomain/Scheduler.html">Machines::Timedomain::Scheduler</a></li>
+				
+					<li><a href="./Machines/Timedomain/Scheduler/Entry.html">Machines::Timedomain::Scheduler::Entry</a></li>
+				
+					<li><a href="./Machines/Timedomain/Scheduler/RealWaitPolicy.html">Machines::Timedomain::Scheduler::RealWaitPolicy</a></li>
+				
+					<li><a href="./Machines/Timedomain/Scheduler/SkipWaitPolicy.html">Machines::Timedomain::Scheduler::SkipWaitPolicy</a></li>
+				
+					<li><a href="./Machines/Timedomain/Timer.html">Machines::Timedomain::Timer</a></li>
+				
+					<li><a href="./BeLogicalFalse.html">BeLogicalFalse</a></li>
+				
+					<li><a href="./Notify.html">Notify</a></li>
+				
+					<li><a href="./NotifyTestEmpty.html">NotifyTestEmpty</a></li>
+				
+					<li><a href="./NotifyTestOne.html">NotifyTestOne</a></li>
+				
+					<li><a href="./NotifyTestOneTwo.html">NotifyTestOneTwo</a></li>
+				
+					<li><a href="./NotifyTestOneWithHandler.html">NotifyTestOneWithHandler</a></li>
+				
+					<li><a href="./NotifyTestTwo.html">NotifyTestTwo</a></li>
+				
+					<li><a href="./Object.html">Object</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">Object</h1>
+
+		<div id="description">
+			
+		</div>
+
+		<!-- Constants -->
+		
+
+		<!-- Attributes -->
+		
+
+		<!-- Methods -->
+		
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="analog-attr-method" class="method-detail ">
+				<a name="method-i-analog_attr"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">analog_attr</span><span
+						class="method-args">(name)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="analog-attr-source">
+<pre>
+   <span class="ruby-comment cmt"># File lib/machines/timedomain/analog_attr.rb, line 4</span>
+4:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">analog_attr</span>(<span class="ruby-identifier">name</span>)
+5:     <span class="ruby-identifier">n</span> = <span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>
+6:     <span class="ruby-identifier">module_eval</span> <span class="ruby-value str">      def #{n}        @#{n}      end      def #{n}=(value)        @#{n} = Analog.to_analog value      end</span>
+7:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="at-method" class="method-detail ">
+				<a name="method-i-at"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">at</span><span
+						class="method-args">(time, &block)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="at-source">
+<pre>
+    <span class="ruby-comment cmt"># File spec/step_base_spec.rb, line 34</span>
+34:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">at</span>(<span class="ruby-identifier">time</span>, &amp;<span class="ruby-identifier">block</span>)
+35:     <span class="ruby-constant">Scheduler</span>.<span class="ruby-identifier">current</span>.<span class="ruby-identifier">wait</span>(<span class="ruby-identifier">time</span>, &amp;<span class="ruby-identifier">block</span>)
+36:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="be-logical-false-method" class="method-detail ">
+				<a name="method-i-be_logical_false"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">be_logical_false</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="be-logical-false-source">
+<pre>
+    <span class="ruby-comment cmt"># File spec/timer_spec.rb, line 51</span>
+51:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">be_logical_false</span>
+52:     <span class="ruby-constant">BeLogicalFalse</span>.<span class="ruby-identifier">new</span>
+53:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="check-time-offsets-method" class="method-detail ">
+				<a name="method-i-check_time_offsets"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">check_time_offsets</span><span
+						class="method-args">(times, desired_times)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="check-time-offsets-source">
+<pre>
+    <span class="ruby-comment cmt"># File spec/discrete_spec.rb, line 32</span>
+32:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">check_time_offsets</span>(<span class="ruby-identifier">times</span>, <span class="ruby-identifier">desired_times</span>)
+33:     <span class="ruby-identifier">times</span>.<span class="ruby-identifier">should</span> <span class="ruby-identifier">have</span>(<span class="ruby-identifier">desired_times</span>.<span class="ruby-identifier">size</span>).<span class="ruby-identifier">items</span>
+34:     <span class="ruby-identifier">times</span>.<span class="ruby-identifier">zip</span>(<span class="ruby-identifier">desired_times</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">pair</span><span class="ruby-operator">|</span>
+35:         <span class="ruby-identifier">pair</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">to_f</span>.<span class="ruby-identifier">should</span> <span class="ruby-identifier">be_within</span>(<span class="ruby-value">0.01</span>).<span class="ruby-identifier">of</span>(<span class="ruby-identifier">pair</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">to_f</span>)
+36:     <span class="ruby-keyword kw">end</span>
+37:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="create-pulse-train-method" class="method-detail ">
+				<a name="method-i-create_pulse_train"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">create_pulse_train</span><span
+						class="method-args">(times)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="create-pulse-train-source">
+<pre>
+    <span class="ruby-comment cmt"># File spec/discrete_spec.rb, line 23</span>
+23:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">create_pulse_train</span>(<span class="ruby-identifier">times</span>)
+24:     <span class="ruby-constant">Discrete</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">tap</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span>
+25:       <span class="ruby-identifier">times</span>.<span class="ruby-identifier">each_slice</span>(<span class="ruby-value">2</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">pair</span><span class="ruby-operator">|</span>
+26:         <span class="ruby-constant">Scheduler</span>.<span class="ruby-identifier">current</span>.<span class="ruby-identifier">wait</span>(<span class="ruby-identifier">pair</span>.<span class="ruby-identifier">first</span>) { <span class="ruby-identifier">p</span>.<span class="ruby-identifier">v</span> = <span class="ruby-keyword kw">true</span> }
+27:         <span class="ruby-constant">Scheduler</span>.<span class="ruby-identifier">current</span>.<span class="ruby-identifier">wait</span>(<span class="ruby-identifier">pair</span>.<span class="ruby-identifier">last</span>) { <span class="ruby-identifier">p</span>.<span class="ruby-identifier">v</span> = <span class="ruby-keyword kw">false</span> }
+28:       <span class="ruby-keyword kw">end</span>
+29:     <span class="ruby-keyword kw">end</span>
+30:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="expect-now-method" class="method-detail ">
+				<a name="method-i-expect_now"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">expect_now</span><span
+						class="method-args">(t)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="expect-now-source">
+<pre>
+    <span class="ruby-comment cmt"># File spec/step_base_spec.rb, line 42</span>
+42:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">expect_now</span>(<span class="ruby-identifier">t</span>)
+43:       <span class="ruby-identifier">now</span>.<span class="ruby-identifier">should</span> <span class="ruby-identifier">be_within</span>(<span class="ruby-value">0.010</span>).<span class="ruby-identifier">of</span>(<span class="ruby-identifier">t</span>)
+44:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="now-method" class="method-detail ">
+				<a name="method-i-now"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">now</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="now-source">
+<pre>
+    <span class="ruby-comment cmt"># File spec/step_base_spec.rb, line 38</span>
+38:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">now</span>
+39:     <span class="ruby-constant">Scheduler</span>.<span class="ruby-identifier">current</span>.<span class="ruby-identifier">now</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@t0</span>
+40:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="now-method" class="method-detail ">
+				<a name="method-i-now"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">now</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="now-source">
+<pre>
+    <span class="ruby-comment cmt"># File spec/discrete_spec.rb, line 39</span>
+39:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">now</span>
+40:     <span class="ruby-constant">Scheduler</span>.<span class="ruby-identifier">current</span>.<span class="ruby-identifier">now</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@t0</span>
+41:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="one-state-should-be-active-method" class="method-detail ">
+				<a name="method-i-one_state_should_be_active"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">one_state_should_be_active</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="one-state-should-be-active-source">
+<pre>
+     <span class="ruby-comment cmt"># File spec/step_base_spec.rb, line 208</span>
+208:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">one_state_should_be_active</span>
+209:     <span class="ruby-ivar">@s</span>.<span class="ruby-identifier">should</span> <span class="ruby-identifier">be_active</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-ivar">@dummy</span>.<span class="ruby-identifier">active?</span>
+210:     <span class="ruby-ivar">@dummy</span>.<span class="ruby-identifier">should</span> <span class="ruby-identifier">be_active</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-ivar">@s</span>.<span class="ruby-identifier">active?</span>
+211:     (<span class="ruby-ivar">@s</span> <span class="ruby-operator">||</span> <span class="ruby-ivar">@dummy</span>).<span class="ruby-identifier">should</span> <span class="ruby-identifier">be_true</span>
+212:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="perform-foo-method" class="method-detail ">
+				<a name="method-i-perform_foo"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">perform_foo</span><span
+						class="method-args">(arr, foo)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="perform-foo-source">
+<pre>
+    <span class="ruby-comment cmt"># File spec/scheduler_nowait_spec.rb, line 69</span>
+69:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">perform_foo</span>(<span class="ruby-identifier">arr</span>, <span class="ruby-identifier">foo</span>)
+70:     <span class="ruby-identifier">arr</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">foo</span>
+71:     <span class="ruby-constant">Scheduler</span>.<span class="ruby-identifier">current</span>.<span class="ruby-identifier">wait</span> <span class="ruby-value">2</span> <span class="ruby-keyword kw">do</span>
+72:        <span class="ruby-identifier">perform_foo</span>(<span class="ruby-identifier">arr</span>, <span class="ruby-identifier">foo</span>)
+73:     <span class="ruby-keyword kw">end</span>
+74:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="run-method" class="method-detail ">
+				<a name="method-i-run"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">run</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="run-source">
+<pre>
+    <span class="ruby-comment cmt"># File spec/step_base_spec.rb, line 46</span>
+46:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">run</span>
+47:     <span class="ruby-constant">Scheduler</span>.<span class="ruby-identifier">current</span>.<span class="ruby-identifier">run_for</span> <span class="ruby-value">5</span>
+48:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

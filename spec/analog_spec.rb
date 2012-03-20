@@ -49,8 +49,8 @@ describe 'Analog signals' do
 
   it 'should support the <=> operation with another signal' do
     cmp = @a <=> @b
-    cmp.should be_a Analog
-    cmp.v.should be_a Fixnum
+    cmp.should be_a(Analog)
+    cmp.v.should be_a(Fixnum)
     cmp.v.should == 0
     @a.v = 1.0
     cmp.v.should == (1.0 <=> 0.0)
@@ -60,7 +60,7 @@ describe 'Analog signals' do
 
   it 'should support the + operation with another constant real value' do
     sum = @a + 5.0
-    sum.should be_a Analog
+    sum.should be_a(Analog)
     sum.v.should == 5.0
     @a.v = 1.0
     sum.v.should == 6.0
@@ -68,7 +68,7 @@ describe 'Analog signals' do
 
   it 'should convert to a discrete value with the > operator' do
     disc = @a > 0.5
-    disc.should be_a DiscreteBase
+    disc.should be_a(DiscreteBase)
     disc.v.should be_false
     @a.v = 1.0
     disc.v.should be_true
@@ -81,7 +81,7 @@ describe 'Analog signals' do
     comb = Analog.combine(@a, @b, c) do |a, b, c|
       a ** 2 + b ** 2 + c ** 2
     end
-    comb.should be_a Analog
+    comb.should be_a(Analog)
     @a.v = 2.0
     @b.v = 4.0
     comb.v.should be_within(0.0001).of(1.0 ** 2 + 2.0 ** 2 + 4.0 ** 2)
@@ -89,7 +89,7 @@ describe 'Analog signals' do
 
   it 'should support Analog.to_disc with a block to convert to discrete' do
     disc = @a.to_disc {|a| (1.0..2.0).include? a }
-    disc.should be_a DiscreteBase
+    disc.should be_a(DiscreteBase)
     disc.v.should be_false
     @a.v = 1.5
     disc.v.should be_true
@@ -107,6 +107,6 @@ describe 'Analog signals' do
     @a.v = 2.0
     @d.v = false
     comb.v.should == 2.0 * 5.0 + 20.0 + 5.0
-    comb.should be_a Analog
+    comb.should be_a(Analog)
   end
 end

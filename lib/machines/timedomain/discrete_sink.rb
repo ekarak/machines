@@ -2,6 +2,8 @@ require 'machines/timedomain/discrete_base'
 
 module Machines
   module Timedomain
+    
+    # transparent discrete component, routes notifications from source component
     class DiscreteSink < DiscreteBase
       attr_reader :source
 
@@ -13,11 +15,12 @@ module Machines
       def v
         @source && to_discrete(@source)
       end
-
+      
+      # sink events from another DiscreteSink upstream to ourselves. 
       def sink(source)
         unless @source.nil?
           throw RuntimeError.new('DiscreteSink may only be assigned to a source once')
-        end 
+        end
         @source = source
         if source.is_a? DiscreteBase
           source.on_change { notify_change }
